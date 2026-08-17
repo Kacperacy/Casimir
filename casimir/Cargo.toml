@@ -1,0 +1,10 @@
+[package]
+name = "casimir"
+version = "0.0.1"
+edition = "2024"
+description = "A chess engine and chess library"
+license = "MIT"
+repository = "https://github.com/kacperacy/Casimir"
+readme = "../README.md"
+keywords = ["chess", "chess-engine", "uci", "chess960"]
+categories = ["games", "game-engines"]
