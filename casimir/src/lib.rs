@@ -1,14 +1,15 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! A chess engine library, and the core of the Casimir UCI engine.
+//!
+//! Chess960 is native, move generation is fully legal — moves come
+//! straight from check and pin masks, with no pseudo-legal stage.
+//!
+//! No `unsafe`, no mandatory dependencies.
+//!
+//! Early development: it does not play chess yet, and the API is unstable.
+#![warn(missing_docs)]
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+mod error;
+mod perft;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use error::{Error, Result};
+pub use perft::perft;
