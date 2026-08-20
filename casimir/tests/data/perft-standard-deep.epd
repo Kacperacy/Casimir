@@ -1,0 +1,31 @@
+# Standard-chess perft suite — deep tier. Ignored by default; run before
+# releases and after any change to the generation rules.
+#
+#   cargo test --release -- --ignored
+#
+# Same format as perft-standard.epd. Do not run this tier in a debug build.
+#
+# Every count below was verified locally against a known-good reference and
+# agrees with both the Chess Programming Wiki tables and the
+# jchess-perft-dataset.
+#
+# Position 3 is the one pushed furthest: it is sparse, so depth is cheap, and
+# it is dense in en-passant and rook-pawn interaction — the two things most
+# likely to be subtly wrong in a way shallow depths do not reveal.
+
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 ;D6 119060324
+r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 ;D5 193690690
+8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1 ;D6 11030083 ;D7 178633661
+r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1 ;D5 15833292
+rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8 ;D5 89941194
+r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10 ;D5 164075551
+
+# Deeper still — these take minutes to hours and were not run locally. They come
+# from the published tables and are here so the numbers are recorded, not
+# because they belong in any routine run. Verify one at a time, deliberately.
+#
+# rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 ;D7 3195901860 ;D8 84998978956
+# r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 ;D6 8031647685
+# 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1 ;D8 3009794393
+# r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1 ;D6 706045033
+# r4rk1/1pp1qppp/p1np1n2/2b1p1B1/2B1P1b1/P1NP1N2/1PP1QPPP/R4RK1 w - - 0 10 ;D6 6923051137

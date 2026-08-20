@@ -8,3 +8,10 @@ repository = "https://github.com/kacperacy/Casimir"
 readme = "../README.md"
 keywords = ["chess", "chess-engine", "uci", "chess960"]
 categories = ["games", "game-engines"]
+
+# The deep perft tiers are hundreds of kilobytes of test data that no consumer
+# of the library needs. They stay in git and run locally; they are kept out of
+# the published package. Safe because the suite reads them at runtime, so their
+# absence cannot break a verification build -- only a deep-tier run, which is
+# never part of packaging.
+exclude = ["tests/data/*-deep.epd"]
