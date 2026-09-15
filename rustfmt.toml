@@ -2,11 +2,6 @@
 # explicit rather than inherited.
 reorder_imports = true
 
-# Both of the following are NIGHTLY-ONLY rustfmt options. The toolchain is
-# pinned to stable 1.92, so `cargo fmt` silently ignores them and CI cannot
-# enforce them. They are kept so that `cargo +nightly fmt` applies the intended
-# style, and so the intent is recorded if rustfmt ever stabilises them.
-#
 # Merge imports from the same crate into a single use statement.
 imports_granularity = "Crate"
 # Group as: std/core/alloc, then external crates, then crate/self/super.

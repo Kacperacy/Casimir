@@ -8,8 +8,10 @@
 //! Early development: it does not play chess yet, and the API is unstable.
 #![warn(missing_docs)]
 
+mod bench;
 mod error;
 mod perft;
 
+pub use bench::bench;
 pub use error::{Error, Result};
 pub use perft::perft;
